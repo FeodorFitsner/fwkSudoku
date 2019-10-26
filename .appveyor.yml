@@ -48,7 +48,6 @@ skip_commits:
 ## Create_Matrix
 image:
 - Visual Studio 2019
-- Visual Studio 2017
 
 platform:
 - x86
@@ -88,12 +87,6 @@ matrix:
   - image: Visual Studio 2015
     configuration: LLVM_Release
     BUILDSYSTEM: MSBuild
-  # Not supported by provided MSBuild Solution/project files:
-  - BUILDSYSTEM: MSBuild_Solution
-    image: Visual Studio 2017
-  # Reduce job count: Only have CMake generate MSBuild files for VS2019.
-  - BUILDSYSTEM: MSBuild
-    image: Visual Studio 2017
   # Reduce job count: Testing CMake generators for MSBuild.
   - BUILDSYSTEM: MSBuild
     platform: x86
@@ -104,9 +97,6 @@ matrix:
     configuration: Debug
   - BUILDSYSTEM: MSBuild
     configuration: Release
-  # Try VS2019:
-  - image: Visual Studio 2019
-    BUILDSYSTEM: MSBuild
 
 # Specializing matrix job configuration
 # Note: overwrites existing, only new variables and notifications are merged.
