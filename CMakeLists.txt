@@ -30,7 +30,7 @@ target_include_directories(Sudoku
 
 target_compile_features(Sudoku
   INTERFACE
-    cxx_std_17
+    cxx_std_20
 )
 
 # Dependencies Sudoku
