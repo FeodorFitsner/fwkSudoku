@@ -55,6 +55,11 @@ target_compile_definitions(SudokuTests
     fwkUnitTest
 )
 
+if(CMAKE_VERSION VERSION_LESS 3.15 AND CMAKE_CXX_COMPILER_ID EQUAL "AppleClang")
+  target_compile_options(console PRIVATE
+    -std=c++2a
+  )
+else()
 set_target_properties(SudokuTests
   PROPERTIES
     CXX_STANDARD 20
@@ -62,6 +67,7 @@ set_target_properties(SudokuTests
     CXX_EXTENSIONS NO
     VS_JUST_MY_CODE_DEBUGGING $<IF:$<CONFIG:Debug>,ON,OFF> # v3.15+
 )
+endif()
 
 ##====--------------------------------------------------------------------====##
 # Compiler Specific Configuration

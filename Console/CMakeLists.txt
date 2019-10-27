@@ -20,14 +20,20 @@ target_link_libraries(console
     Sudoku
 )
 
+if(CMAKE_VERSION VERSION_LESS 3.15 AND CMAKE_CXX_COMPILER_ID EQUAL "AppleClang")
+  target_compile_options(console PRIVATE
+    -std=c++2a
+  )
+else()
 set_target_properties(console
   PROPERTIES
-    CXX_STANDARD 20
+    CXX_STANDARD 20 # v3.15+ for AppleClang
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS OFF
     MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:DebugDLL>" # v3.15+
     VS_JUST_MY_CODE_DEBUGGING $<IF:$<CONFIG:Debug>,ON,OFF> # v3.15+
 )
+endif()
 
 ##====--------------------------------------------------------------------====##
 # Compiler Specific Configuration
