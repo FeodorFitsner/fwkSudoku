@@ -6,6 +6,8 @@
 [![Build status][AppVeyor-badge]][AppVeyor-link]
 [![codecov][Codecov-badge]][Codecov-link]
 [![CodeFactor][CodeFactor-badge]][CodeFactor-link]
+[![Clang-Format-badge]][Clang-Format-link]
+
 <!-- Description -->
 Originally this started as a one of many small experiments while starting to
 learn C++. With a mild interest in properties of sudokus. It was mainly focused
@@ -132,6 +134,8 @@ Code licensed under the [MIT License](./LICENSE).
 [CodeFactor-link]:  https://www.codefactor.io/repository/github/farwaykorse/fwksudoku/overview/master
 [Travis-badge]:   https://travis-ci.com/Farwaykorse/fwkSudoku.svg?branch=master
 [Travis-link]:    https://travis-ci.com/Farwaykorse/fwkSudoku/branches
+[Clang-Format-badge]: https://github.com/Farwaykorse/fwkSudoku/workflows/clang-format/badge.svg?branch=master
+[Clang-Format-link]:  https://github.com/Farwaykorse/fwkSudoku/actions?query=workflow%3Aclang-format+branch%3Amaster
 
 [github-GTest]:   https://github.com/google/googletest
 [github-ms-gsl]:  https://github.com/Microsoft/GSL
