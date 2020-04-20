@@ -47,26 +47,16 @@ skip_commits:
 ## Create_Matrix
 image:
 - Visual Studio 2019
-- Visual Studio 2017
 
 platform:
 - x86
-- x64
 
 configuration:
 - Debug
-- Release
-- LLVM_Debug
-- LLVM_Release
 
 environment:
   matrix:
   - BUILDSYSTEM: &Build_Ninja Ninja
-  - BUILDSYSTEM: &Build_Solution MSBuild_Solution
-    CONDITION: &MSBuild_cond_main main_branch_only
-  - BUILDSYSTEM: *Build_Solution
-    CONDITION: &MSBuild_cond_other other_branch
-  - BUILDSYSTEM: &Build_MSBuild MSBuild
   global:
     # yamllint disable rule:line-length
     APPVEYOR_SAVE_CACHE_ON_ERROR: true
