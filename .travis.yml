@@ -687,6 +687,7 @@ install:
 - |
   # Build/install libraries
   pushd ${VCPKG_DIR}
+  ls -al
   ./vcpkg install ms-gsl
   ./vcpkg install gtest
   popd
