@@ -323,6 +323,10 @@ before_build:
     } else {
       $env:CFLAGS   = "$env:CFLAGS /WX"
       $env:CXXFLAGS = "$env:CXXFLAGS /WX"
+      if ("$env:BUILDSYSTEM" -eq "Ninja") {
+        $env:CC  = "cl.exe"
+        $env:CXX = "cl.exe"
+      }
     }
     $env:CMakeGenFlags = "$CMakeGenFlags"            `
       +" -DCMAKE_BUILD_TYPE=$env:CONFIGURATION"      `
