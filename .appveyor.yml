@@ -73,6 +73,12 @@ environment:
 ##====--------------------------------------------------------------------====##
 init:
 - ps: |
+    if (Test-Path 'C:\Strawberry') {
+      Remove-Path 'C:\Strawberry\c\bin'
+      Remove-Path 'C:\Strawberry\perl\site\bin'
+      $env:path = $env:path.replace('C:\Strawberry\c\bin;', '').replace('C:\Strawberry\perl\site\bin;', '')
+    }
+- ps: |
     New-Item -ItemType Directory -Force ~\tools | pushd
     git clone https://github.com/Farwaykorse/AppVeyorHelpers.git --quiet
     Import-Module -Name .\AppVeyorHelpers -MinimumVersion 0.14.1
