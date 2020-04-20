@@ -541,6 +541,7 @@ before_install:
       eval ${GENERATE_SRC_HASH} > ${VCPKG_SRC_HASH}
     fi
   )
+    ls -al
     popd
   fi
 - |
